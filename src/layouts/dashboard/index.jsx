@@ -1,0 +1,48 @@
+import {useState, useEffect} from 'react'
+import { RiFunctionLine, RiCloseLargeFill } from 'react-icons/ri'
+import { Footer } from './Footer'
+import { Header } from './Header'
+import { Sidebar } from './Sidebar'
+import { Outlet } from 'react-router'
+
+const index = () => {
+  const [visible, setVisible] = useState(false)
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
+
+ useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  return (
+    <div className='grid h-screen md:grid-cols-[250px_1fr] grid-cols-1 relative'>
+      {!isMobile && <Sidebar />}
+      <div className='flex flex-col h-screen'>
+        <Header />
+        <main className='flex-1 overflow-auto p-4'> Hola Mundo </main>
+        <Footer />
+      </div>
+      {isMobile && (
+        <button 
+          className='fixed bottom-4 right-4 bg-green-700 text-white p-2 rounded-full shadow-lg z-50'
+          onClick={() => setVisible(!visible)}
+        >
+          {!visible ? <RiFunctionLine size={30}/> : <RiCloseLargeFill size={30} />}
+        </button>
+      )}
+       {/* Sidebar móvil con animación */}
+      {isMobile && (
+        <div
+          className={`fixed top-0 left-0 w-full bg-white shadow-lg z-40 transition-transform duration-300 ${
+            visible ? 'translate-y-0' : '-translate-y-full'
+          }`}
+        >
+          <Sidebar />
+        </div>
+      )}
+    </div>
+  )
+}
+
+export default index
