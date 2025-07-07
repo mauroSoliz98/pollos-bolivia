@@ -16,11 +16,11 @@ const index = () => {
   }, [])
 
   return (
-    <div className='grid h-screen md:grid-cols-[250px_1fr] grid-cols-1 relative'>
+    <div className='grid h-screen md:grid-cols-[250px_1fr] grid-cols-1 relative gap-2 bg-white dark:bg-neutral-900 dark:text-neutral-200 '>
       {!isMobile && <Sidebar />}
-      <div className='flex flex-col h-screen'>
+      <div className='flex flex-col h-screen gap-2 py-2 pr-2'>
         <Header />
-        <main className='flex-1 overflow-auto p-4'> Hola Mundo </main>
+        <main className='flex-1 overflow-auto p-4 bg-stone-300 dark:bg-neutral-700'> Hola Mundo </main>
         <Footer />
       </div>
       {isMobile && (
