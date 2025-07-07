@@ -14,7 +14,7 @@ export const navbarLinks = [
             {
                 name:'Principal',
                 icon: <RiHomeLine size={17}/>,
-                to: 'home'
+                to: 'main'
             },
             {
                 name: 'Almacen',
@@ -24,7 +24,7 @@ export const navbarLinks = [
             {
                 name: 'Menu de comidas',
                 icon: <RiTodoLine size={17}/>,
-                to: 'food_menu'
+                to: 'food'
             },
             {
                 name: 'Factura',
