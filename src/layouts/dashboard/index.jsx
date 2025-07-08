@@ -27,7 +27,7 @@ const index = () => {
       </div>
       {isMobile && (
         <button 
-          className='fixed bottom-4 right-4 bg-green-700 text-white p-2 rounded-full shadow-lg z-50'
+          className='fixed bottom-4 right-4 transition duration-300 bg-green-700 text-white p-2 rounded-full shadow-lg z-50'
           onClick={() => setVisible(!visible)}
         >
           {!visible ? <RiFunctionLine size={30}/> : <RiCloseLargeFill size={30} />}
