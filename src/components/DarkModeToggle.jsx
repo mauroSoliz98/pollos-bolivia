@@ -21,7 +21,7 @@ const DarkModeToggle = () => {
   return (
     <button
       onClick={() => setDarkMode((prev) => !prev)}
-      className="p-2 rounded-full bg-gray-200 dark:bg-neutral-800 text-black dark:text-white shadow"
+      className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 text-black dark:text-white shadow"
     >
       {darkMode ? <RiSunFill size={30}/> : <RiMoonClearFill size={30} />}
     </button>

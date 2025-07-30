@@ -40,7 +40,7 @@ const Main = () => {
   ];
 
   return (
-    <div className="min-h-screen transition-all duration-300 bg-stone-100 text-gray-900 dark:bg-neutral-700 dark:text-white">
+    <div className="min-h-screen transition-all duration-300 bg-stone-100 text-gray-900 dark:bg-gray-900  dark:text-white">
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold mb-2">Panel de Control</h1>

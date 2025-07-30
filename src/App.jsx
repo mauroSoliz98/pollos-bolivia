@@ -23,6 +23,7 @@ function App() {
         <Route path="food" element={<Food/>}/>
         <Route path="invoice" element={<Invoice/>}/>
         <Route path="store" element={<Store/>}/>
+        <Route path="logout" element={<Navigate to="/login" replace />} />
       </Route>
     </Routes>
   )

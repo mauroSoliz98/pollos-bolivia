@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import LoginInput from '../../components/LoginInput'
+import DarkModeToggle from '../../components/DarkModeToggle'
 import {useNavigate} from 'react-router'  
 
 export const Login = () => {
@@ -23,7 +24,10 @@ export const Login = () => {
     setData({...data, [e.target.id]: e.target.value})
   }
   return (
-    <div className='h-screen flex flex-col items-center justify-center p-4 gap-0.5'>
+    <div className='h-screen flex flex-col items-center justify-center p-4 gap-0.5 relative'>
+      <div className='absolute top-4 left-4 z-10'>
+        <DarkModeToggle/>
+      </div>
         <h1>Titulo</h1>
         <h1 className='font-bold text-3xl'>Bienvenido</h1>
         <p className='text-stone-500'>Inicia sesión para continuar</p>
@@ -42,7 +46,7 @@ export const Login = () => {
                         onChange={handleChange}
                         value={data.password}
             />
-            <button className='bg-primary p-2 text-amber-50 rounded-md hover:bg-tertiary hover:shadow-lg hover:shadow-green-300 ' 
+            <button className='bg-primary p-2 text-amber-50 rounded-md hover:bg-red-700 hover:shadow-lg hover:shadow-red-700/50 ' 
                     type='submit'
             >
                 Iniciar sesión

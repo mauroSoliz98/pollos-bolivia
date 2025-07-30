@@ -12,8 +12,8 @@ const Auth = () => {
   }, [])
 
   return (
-    <div className='grid grid-cols-1 md:grid-cols-2 h-screen'>
-      <Outlet />
+    <div className='grid grid-cols-1 md:grid-cols-2 h-screen dark:bg-gray-950 dark:text-gray-200'>
+      <Outlet/>
       {!isMobile && (
         <div className='flex flex-col items-center justify-center bg-linear-to-b from-primary to-red-500'>
           <img src={LoginFondo} alt="Login Background" className='w-200 h-150 object-cover bg-clip-content' />
