@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Outlet } from 'react-router'
-import LoginFondo from '../../assets/images/fondoLogin.jpg'
+import LoginFondo from '../../assets/images/PolloBoliviaLogin.jpeg'
 
 const Auth = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -16,7 +16,7 @@ const Auth = () => {
       <Outlet/>
       {!isMobile && (
         <div className='flex flex-col items-center justify-center bg-linear-to-b from-primary to-red-500'>
-          <img src={LoginFondo} alt="Login Background" className='w-200 h-150 object-cover bg-clip-content' />
+          <img src={LoginFondo} alt="Login Background" className='w-full h-screen object-fill bg-clip-content' />
         </div>
       )}
     </div>

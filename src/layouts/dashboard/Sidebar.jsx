@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import MiLogo from '../../assets/images/LogoPollo.png'
+import MiLogo from '../../assets/images/LogoPollosMejorado.png'
 import { navbarLinks } from '../../constants'
 import { NavLink } from 'react-router'
 import { RiArrowRightSLine, RiArrowDownSLine } from 'react-icons/ri'
@@ -17,7 +17,7 @@ export const Sidebar = () => {
   return (
     <div className='bg-tertiary flex flex-col gap-5 p-4 min-h-screen'>
       <div className='flex items-center justify-center gap-2'>
-        <img src={MiLogo} className='w-30 h-20' />
+        <img src={MiLogo} className="w-auto h-32 object-contain"  />
       </div>
       <div>
         {navbarLinks.map((navlink, i) => (
@@ -47,7 +47,7 @@ export const Sidebar = () => {
                       </button>
 
                       {isOpen && (
-                        <div className='ml-6 mt-1 flex flex-col gap-1'>
+                        <div className='ml-6 mt-1 flex flex-col gap-1 bg-green-900 rounded p-2'>
                           {link.options.map((sub, k) => (
                             <NavLink
                               to={sub.to}
