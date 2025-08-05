@@ -15,11 +15,11 @@ export const Sidebar = () => {
   }
 
   return (
-    <div className='bg-tertiary flex flex-col gap-5 p-4 min-h-screen'>
+    <div className='bg-primary flex flex-col p-4 min-h-screen'>
       <div className='flex items-center justify-center gap-2'>
         <img src={MiLogo} className="w-auto h-32 object-contain"  />
       </div>
-      <div>
+      <div className='flex-1 overflow-y-auto pr-2 custom-scroll'>
         {navbarLinks.map((navlink, i) => (
           <nav key={i} className='flex flex-col gap-2'>
             <p className='text-stone-400 mt-5'>{navlink.title}</p>
@@ -33,7 +33,7 @@ export const Sidebar = () => {
                     <>
                       <button
                         onClick={() => toggleMenu(link.name)}
-                        className='flex justify-between items-center text-white hover:bg-gradient-to-r from-tertiary to-primary p-2 rounded'
+                        className='flex justify-between items-center text-white hover:bg-gradient-to-r from-primary to-secondary p-2 rounded'
                       >
                         <div className='flex items-center gap-2'>
                           {link.icon}
@@ -47,12 +47,12 @@ export const Sidebar = () => {
                       </button>
 
                       {isOpen && (
-                        <div className='ml-6 mt-1 flex flex-col gap-1 bg-green-900 rounded p-2'>
+                        <div className='ml-4 mt-1 flex flex-col gap-1 bg-red-900 rounded p-2'>
                           {link.options.map((sub, k) => (
                             <NavLink
                               to={sub.to}
                               key={k}
-                              className='flex items-center gap-2 text-white hover:bg-primary p-2 rounded text-sm'
+                              className='flex items-center gap-2 text-white hover:bg-tertiary p-2 rounded text-sm'
                             >
                               {sub.icon}
                               <span>{sub.name}</span>
@@ -64,7 +64,7 @@ export const Sidebar = () => {
                   ) : (
                     <NavLink
                       to={link.to}
-                      className='flex items-center gap-2 text-white hover:bg-gradient-to-r from-tertiary to-primary p-2 rounded'
+                      className='flex items-center gap-2 text-white hover:bg-gradient-to-r from-primary to-secondary p-2 rounded'
                     >
                       {link.icon}
                       <span>{link.name}</span>

@@ -31,22 +31,22 @@ export const navbarLinks = [
                 options: [
                     {
                         name: 'Productos',
-                        to: 'products',
+                        to: 'store/products',
                         icon: <RiShoppingBagLine size={17}/>
                     },
                     {
                         name: 'Categorias',
-                        to: 'categories',
+                        to: 'store/categories',
                         icon: <RiDraftFill size={17}/>
                     },
                     {
                         name: 'Proveedores',
-                        to: 'providers',
+                        to: 'store/suppliers',
                         icon: <RiTruckLine size={17}/>
                     },
                     {
                         name: 'Entradas',
-                        to: 'entries',
+                        to: 'store/entries',
                         icon: <RiFileAddLine size={17}/>
                     }
                 ]
@@ -58,18 +58,18 @@ export const navbarLinks = [
                 options: [
                     {
                         name: 'Ingredientes',
-                        to: 'ingredients',
+                        to: 'food/ingredients',
                         icon: <RiRestaurantLine size={17}/>
 
                     },
                     {
                         name: 'Platos',
-                        to: 'dishes',
+                        to: 'food/dishes',
                         icon: <RiRestaurant2Line size={17}/>
                     },
                     {
                         name: 'Categorias',
-                        to: 'food-categories',
+                        to: 'food/categories',
                         icon: <RiHandCoinLine size={17}/>
                     }
                 ]   
