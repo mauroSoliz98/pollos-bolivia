@@ -7,3 +7,72 @@
     --color-secondary: #FFD700;
     --color-tertiary: #006633;
 }
+
+/* datatable-dark.css */
+
+/* Modo oscuro para React Data Table */
+.dark .rdt_Table {
+  background-color: transparent !important;
+  color: inherit !important;
+}
+
+.dark .rdt_TableHeader {
+  background-color: transparent !important;
+  color: inherit !important;
+}
+
+.dark .rdt_TableHeadRow {
+  background-color: transparent !important;
+  border-bottom: 1px solid rgb(55 65 81) !important; /* gray-700 */
+}
+
+.dark .rdt_TableHead {
+  color: inherit !important;
+  font-weight: 600 !important;
+}
+
+.dark .rdt_TableRow {
+  background-color: transparent !important;
+  border-bottom: 1px solid rgb(75 85 99) !important; /* gray-600 */
+  color: inherit !important;
+}
+
+.dark .rdt_TableRow:hover {
+  background-color: rgb(55 65 81) !important; /* gray-700 */
+}
+
+.dark .rdt_TableCell {
+  color: inherit !important;
+}
+
+.dark .rdt_Pagination {
+  background-color: transparent !important;
+  border-top: 1px solid rgb(55 65 81) !important; /* gray-700 */
+  color: inherit !important;
+}
+
+.dark .rdt_Pagination button {
+  color: inherit !important;
+  background-color: transparent !important;
+  border-radius: 6px !important;
+}
+
+.dark .rdt_Pagination button:hover:not(:disabled) {
+  background-color: rgb(55 65 81) !important; /* gray-700 */
+}
+
+.dark .rdt_Pagination button:disabled {
+  color: rgb(156 163 175) !important; /* gray-400 */
+}
+
+/* Personalizar el select de paginación */
+.dark .rdt_Pagination select {
+  background-color: rgb(55 65 81) !important; /* gray-700 */
+  color: inherit !important;
+  border: 1px solid rgb(75 85 99) !important; /* gray-600 */
+}
+
+/* Personalizar el texto de paginación */
+.dark .rdt_Pagination div {
+  color: inherit !important;
+}

@@ -13,9 +13,10 @@ import DataTable from 'react-data-table-component'
 import { productos } from '../../../constants'
 
 export const Products = () => {
-  const {columns, items} = productos
+  const {columns, data} = productos
+
   return (
-    <div>
+    <div className='flex flex-col gap-4'>
       <TitleHeader>
         <div className='flex items-center gap-2'>
           <AddButton label={"Nuevo producto"} />
@@ -40,7 +41,7 @@ export const Products = () => {
       </TitleHeader>
       <DataTable
         columns={columns}
-        data={items}
+        data={data}
         pagination
         highlightOnHover
         pointerOnHover
