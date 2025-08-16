@@ -1,37 +1,51 @@
 import React from 'react'
 import { AddButton } from '../../../components/AddButton'
-import {RiLoopLeftFill, 
-        RiDeleteBin6Line, 
-        RiEditLine,
-        RiDownloadLine} from 'react-icons/ri'
+import {
+  RiLoopLeftFill,
+  RiDeleteBin6Line,
+  RiEditLine,
+  RiDownload2Line,
+  RiUpload2Line
+} from 'react-icons/ri'
 import { MyButton } from '../../../components/MyButton'
+import TitleHeader from '../../../components/TitleHeader'
+import DataTable from 'react-data-table-component'
+import { productos } from '../../../constants'
 
 export const Products = () => {
-  var curretPath = window.location.pathname.replace('/', '')
-  var location = curretPath.replaceAll('/', ' > ')
-  // poner en mayusculas la primera letra de cada palabra
-  location = location.split('>').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' > ')
-  
-  
+  const {columns, items} = productos
   return (
     <div>
-      <div className='flex items-center justify-between'>
-        <h1 className='text-3xl'>Productos</h1>
-        <p className='font-bold text-md'>{location}</p>
-      </div>
-      <div className='w-full bg-white border border-gray-200 shadow-sm sm:p-8 dark:bg-gray-950 dark:border-gray-700'>
-        <div className='flex justify-between gap-2'>
-          <div className='flex items-center gap-2'>
-            <AddButton label={"Nuevo producto"}/>
-            <MyButton><RiLoopLeftFill size={20}/></MyButton>
-            <MyButton><RiEditLine size={20}/></MyButton>
-            <MyButton><RiDeleteBin6Line size={20}/></MyButton>
-          </div>
-          <div>
-            <MyButton><RiDownloadLine size={20}/></MyButton>
-          </div>
+      <TitleHeader>
+        <div className='flex items-center gap-2'>
+          <AddButton label={"Nuevo producto"} />
+          <MyButton><RiLoopLeftFill size={20} /></MyButton>
+          <MyButton><RiEditLine size={20} /></MyButton>
+          <MyButton><RiDeleteBin6Line size={20} /></MyButton>
         </div>
-      </div>
+        <div className='flex items-center gap-2'>
+          <MyButton>
+            <div className='flex items-center gap-1'>
+              <RiUpload2Line size={20} />
+              <p>Importar</p>
+            </div>
+          </MyButton>
+          <MyButton>
+            <div className='flex items-center gap-1'>
+              <RiDownload2Line size={20} />
+              <p>Exportar</p>
+            </div>
+          </MyButton>
+        </div>
+      </TitleHeader>
+      <DataTable
+        columns={columns}
+        data={items}
+        pagination
+        highlightOnHover
+        pointerOnHover
+        responsive
+      />
     </div>
   )
 }
