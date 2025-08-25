@@ -1,4 +1,4 @@
-import React from 'react'
+import {useState} from 'react'
 import { AddButton } from '../../../components/AddButton'
 import {
   RiLoopLeftFill,
@@ -11,15 +11,17 @@ import { MyButton } from '../../../components/MyButton'
 import TitleHeader from '../../../components/TitleHeader'
 import DataTable from 'react-data-table-component'
 import { productos } from '../../../constants'
+import { NewProduct } from './forms/NewProduct'
 
 export const Products = () => {
+  const [isOpen, setIsOpen] = useState(false)
   const {columns, data} = productos
 
   return (
     <div className='flex flex-col gap-4'>
       <TitleHeader>
         <div className='flex items-center gap-2'>
-          <AddButton label={"Nuevo producto"} />
+          <AddButton onClick={() => setIsOpen(true)} label={"Nuevo producto"} />
           <MyButton><RiLoopLeftFill size={20} /></MyButton>
           <MyButton><RiEditLine size={20} /></MyButton>
           <MyButton><RiDeleteBin6Line size={20} /></MyButton>
@@ -39,10 +41,12 @@ export const Products = () => {
           </MyButton>
         </div>
       </TitleHeader>
+      {isOpen && <NewProduct onClose={() => setIsOpen(false)} /> }
       <DataTable
         columns={columns}
         data={data}
         pagination
+        selectableRows
         highlightOnHover
         pointerOnHover
         responsive
